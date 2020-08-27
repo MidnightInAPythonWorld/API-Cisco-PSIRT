@@ -59,7 +59,7 @@ def print_results(api_results):
 ###
 ### Cisco API Function
 ###
-def cisco_api(url,type,vendor,product,rcce_team):
+def cisco_api(url,type,vendor,product):
     api_results = []
     try:
         api_requests = requests.get(url, headers = cisco_api_headers, timeout=15.000, verify=True)
@@ -69,7 +69,6 @@ def cisco_api(url,type,vendor,product,rcce_team):
                  'type': type,
                  'vendor': vendor,
                  'product': product,
-                 'rcce_team': rcce_team,
                  'advisoryId': x['advisoryId'],
                  'advisoryTitle': x['advisoryTitle'],
                  'bugIDs': x['bugIDs'],
@@ -97,7 +96,7 @@ def cisco_asa():
     vendor = "cisco"
     product = "asa"
     rcce_team = "fw_team"
-    cisco_api(url,type,vendor,product,rcce_team)
+    cisco_api(url,type,vendor,product)
 
 
 def cisco_asdm():
@@ -105,8 +104,7 @@ def cisco_asdm():
     type = "cisco_asdm_advisory"
     vendor = "cisco"
     product = "asdm"
-    rcce_team = "fw_team"
-    cisco_api(url,type,vendor,product,rcce_team)
+    cisco_api(url,type,vendor,product)
 
 
 def cisco_csm():
@@ -114,8 +112,7 @@ def cisco_csm():
     type = "cisco_csm_advisory"
     vendor = "cisco"
     product = "csm"
-    rcce_team = "fw_team"
-    cisco_api(url,type,vendor,product,rcce_team)
+    cisco_api(url,type,vendor,product)
 
 
 def cisco_latest():
@@ -123,8 +120,7 @@ def cisco_latest():
     type = "cisco_latest_advisory"
     vendor = "cisco"
     product = "various"
-    rcce_team = "na"
-    cisco_api(url,type,vendor,product,rcce_team)
+    cisco_api(url,type,vendor,product)
 
 
 def cisco_CVE_2018_0296():
@@ -132,8 +128,7 @@ def cisco_CVE_2018_0296():
     type = "cisco_ravpn_cve"
     vendor = "cisco"
     product = "ravpn"
-    rcce_team = "fw_team"
-    cisco_api(url,type,vendor,product,rcce_team)
+    cisco_api(url,type,vendor,product)
 
 
 def cisco_CVE_2018_0251():
@@ -141,8 +136,7 @@ def cisco_CVE_2018_0251():
     type = "cisco_ravpn_cve"
     vendor = "cisco"
     product = "ravpn"
-    rcce_team = "fw_team"
-    cisco_api(url,type,vendor,product,rcce_team)
+    cisco_api(url,type,vendor,product)
 
 
 
