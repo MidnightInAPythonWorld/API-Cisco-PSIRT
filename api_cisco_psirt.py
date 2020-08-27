@@ -124,17 +124,17 @@ def cisco_latest():
 
 def cisco_CVE_2018_0296():
     url = "https://api.cisco.com/security/advisories/cvrf/cve/CVE-2018-0296"
-    type = "cisco_ravpn_cve"
+    type = "cisco_vpn_cve"
     vendor = "cisco"
-    product = "ravpn"
+    product = "vpn"
     cisco_api(url,type,vendor,product)
 
 
 def cisco_CVE_2018_0251():
     url = "https://api.cisco.com/security/advisories/cvrf/cve/CVE-2018-0251"
-    type = "cisco_ravpn_cve"
+    type = "cisco_vpn_cve"
     vendor = "cisco"
-    product = "ravpn"
+    product = "vpn"
     cisco_api(url,type,vendor,product)
 
 
