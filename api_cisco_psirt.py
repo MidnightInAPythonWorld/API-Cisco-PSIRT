@@ -95,7 +95,6 @@ def cisco_asa():
     type = "cisco_asa_advisory"
     vendor = "cisco"
     product = "asa"
-    rcce_team = "fw_team"
     cisco_api(url,type,vendor,product)
 
 
