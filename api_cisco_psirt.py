@@ -4,7 +4,7 @@ __author__ = 'MidnightInAPythonWorld'
 # Check for Python3
 import sys
 if sys.version_info[0] != 3:
-    print("[-] VirusTotal API Hash Checker requires Python 3")
+    print("[-] Script requires Python 3")
     print("[-] Exiting script")
     exit()
 
