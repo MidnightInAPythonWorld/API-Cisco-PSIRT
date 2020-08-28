@@ -11,7 +11,7 @@ This script will query Cisco PSIRT OpenVuln API.
  
 ### Output
  - The script simply prints return to the screen in JSON format.
- - However, these results can easily be sent to SIEM or other endpoints.
+ - However, these results can easily be sent to SIEM or other endpoints depending on your ends.
  
 
 For more information on Cisco PSIRT OpenVuln, please reference the following:
