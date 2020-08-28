@@ -26,6 +26,7 @@ This script will query Cisco PSIRT OpenVuln API.
 
 For more information on Cisco PSIRT OpenVuln, please reference the following:
 https://developer.cisco.com/psirt/
+
 For more information on the API Capabilities, please reference the following:
 https://developer.cisco.com/docs/psirt/#!api-reference
 
