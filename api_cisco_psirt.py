@@ -72,11 +72,11 @@ def cisco_asa():
     product = "asa"
     cisco_api(url,type,vendor,product)
 
-def cisco_asdm():
-    url = "https://api.cisco.com/security/advisories/cvrf/product?product=asdm"
-    type = "cisco_asdm_advisory"
+def cisco_ios_version():
+    url = "https://api.cisco.com/security/advisories/ios?version=12.3(14)T"
+    type = "cisco_ios_advisory"
     vendor = "cisco"
-    product = "asdm"
+    product = "ios"
     cisco_api(url,type,vendor,product)
 
 def cisco_latest():
@@ -95,7 +95,7 @@ def cisco_CVE_2018_0296():
 
 def main():
     cisco_asa()
-    cisco_asdm()
+    cisco_ios_version()
     cisco_latest()
     cisco_CVE_2018_0296()
 
