@@ -20,7 +20,7 @@ This script will query Cisco PSIRT OpenVuln API.
  - By CVE ID
  - By Lastest Advisories
  - By Product Name
- - By either IOS, IOS-XE, or NX-OS software version
+ - By IOS, IOS-XE, or NX-OS software version
 
 
 For more information on Cisco PSIRT OpenVuln, please reference the following:
