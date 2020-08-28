@@ -13,7 +13,7 @@ This script will query Cisco PSIRT OpenVuln API.
  - The script simply prints results to the screen in JSON format. 
  - This will dump a lot of text to the scresn so just comment out the functions in main to see results from different API calls.
  - These results can easily be sent to SIEM or other endpoints.
- - For example, This script could be used to send results to Splunk HEC for alerting or dashboarding.
+ - For example, this script could be used to send results to Splunk HEC for alerting or dashboarding.
  
 ### API Options
  - By Advisory ID
