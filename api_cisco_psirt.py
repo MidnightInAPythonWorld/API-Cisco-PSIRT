@@ -47,25 +47,16 @@ cisco_api_headers['Accept-Encoding'] = 'gzip, deflate'
 cisco_api_headers['Connection'] = 'Keep-Alive'
 
 
-###
-### 
-###
-def print_results(api_results):
-    api_results_json_data = [json.loads(x) for x in api_results]
-    for x in api_results_json_data:
-        pprint(x)
-
 
 ###
 ### Cisco API Function
 ###
 def cisco_api(url,type,vendor,product):
-    api_results = []
     try:
         api_requests = requests.get(url, headers = cisco_api_headers, timeout=15.000, verify=True)
         api_json = api_requests.json()
         for x in api_json['advisories']:
-            json_ping_fields = {'time':epoch_time,
+            json_fields = {'time':epoch_time,
                  'type': type,
                  'vendor': vendor,
                  'product': product,
@@ -83,11 +74,9 @@ def cisco_api(url,type,vendor,product):
                  'sir': x['sir'],
                  'summary': x['summary'],
               }
-            api_results.append(json.dumps(json_ping_fields))
+            pprint(json_fields)
     except:
         pass
-    print_results(api_results)
-
 
 
 def cisco_asa():
@@ -103,14 +92,6 @@ def cisco_asdm():
     type = "cisco_asdm_advisory"
     vendor = "cisco"
     product = "asdm"
-    cisco_api(url,type,vendor,product)
-
-
-def cisco_csm():
-    url = "https://api.cisco.com/security/advisories/cvrf/product?product=csm"
-    type = "cisco_csm_advisory"
-    vendor = "cisco"
-    product = "csm"
     cisco_api(url,type,vendor,product)
 
 
@@ -130,22 +111,13 @@ def cisco_CVE_2018_0296():
     cisco_api(url,type,vendor,product)
 
 
-def cisco_CVE_2018_0251():
-    url = "https://api.cisco.com/security/advisories/cvrf/cve/CVE-2018-0251"
-    type = "cisco_vpn_cve"
-    vendor = "cisco"
-    product = "vpn"
-    cisco_api(url,type,vendor,product)
-
 
 
 def main():
     cisco_asa()
     cisco_asdm()
-    cisco_csm()
     cisco_latest()
     cisco_CVE_2018_0296()
-    cisco_CVE_2018_0251()
 
 
 if __name__== "__main__":
