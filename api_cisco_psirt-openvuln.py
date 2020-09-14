@@ -14,13 +14,14 @@ from pprint import pprint
 epoch_time =  int(time.time())
 
 # The below psirt_auth_headers is required to get auth token from Cisco that is valid for 1 hour
-psirt_auth_headers = {}
-psirt_auth_headers['Accept'] = 'application/json'
-psirt_auth_headers['Accept-Language'] = 'en-US'
-psirt_auth_headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko'
-psirt_auth_headers['Accept-Encoding'] = 'gzip, deflate'
-psirt_auth_headers['Content-Type'] = 'application/x-www-form-urlencoded'
-psirt_auth_headers['Connection'] = 'Keep-Alive'
+psirt_auth_headers = {
+    'Accept': 'application/json',
+    'Accept-Language': 'en-US,en;q=0.5',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:80.0) Gecko/20100101 Firefox/80.0',
+    'Accept-Encoding': 'gzip, deflate',
+    'Content-Type': 'application/x-www-form-urlencoded', 
+    'Connection': 'Keep-Alive',
+}
 
 # Below will prompt user to enter auth creds for Cisco PSIRT OpenVuln
 payload = {'client_id': input("Enter Client ID: "), 'client_secret': input("Enter Client Secret: "), 'grant_type': 'client_credentials'}
@@ -29,13 +30,15 @@ psirt_auth_json = psirt_auth.json()
 psirt_auth_data = psirt_auth_json['access_token']
 
 # The below header includes the Cisco psirt_auth_headers token for the GET requests
-cisco_api_headers = {}
-cisco_api_headers['Accept'] = 'application/json'
-cisco_api_headers['Authorization'] = "Bearer " + psirt_auth_data
-cisco_api_headers['Accept-Language'] = 'en-US'
-cisco_api_headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko'
-cisco_api_headers['Accept-Encoding'] = 'gzip, deflate'
-cisco_api_headers['Connection'] = 'Keep-Alive'
+
+cisco_api_headers = {
+    'Accept':'application/json',
+    'Authorization': "Bearer " + psirt_auth_data,
+    'Accept-Language': 'en-US,en;q=0.5',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:80.0) Gecko/20100101 Firefox/80.0',
+    'Accept-Encoding': 'gzip, deflate',
+    'Connection': 'Keep-Alive',
+}
 
 # Cisco API Function
 def cisco_api(url,type,vendor,product):
