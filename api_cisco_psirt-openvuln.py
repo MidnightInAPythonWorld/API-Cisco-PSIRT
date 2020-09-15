@@ -41,6 +41,8 @@ cisco_api_headers = {
 
 # Cisco API Function
 def cisco_api(url,type,vendor,product):
+    """This function is used make the HTTP GET to Cisco OpenVuln API, create a JSON object, and simply pprint to screen.
+    """  
     try:
         api_requests = requests.get(url, headers = cisco_api_headers, timeout=15.000, verify=True)
         api_json = api_requests.json()
@@ -68,6 +70,8 @@ def cisco_api(url,type,vendor,product):
         pass
 
 def cisco_asa():
+    """This function is an example of querying the API for Cisco ASA Product.
+    """  
     url = "https://api.cisco.com/security/advisories/cvrf/product?product=asa"
     type = "cisco_asa_advisory"
     vendor = "cisco"
@@ -75,6 +79,8 @@ def cisco_asa():
     cisco_api(url,type,vendor,product)
 
 def cisco_ios_version():
+    """This function is an example of querying the API for IOS 12.3(14)T.
+    """  
     url = "https://api.cisco.com/security/advisories/ios?version=12.3(14)T"
     type = "cisco_ios_advisory"
     vendor = "cisco"
@@ -82,6 +88,8 @@ def cisco_ios_version():
     cisco_api(url,type,vendor,product)
 
 def cisco_latest():
+    """This function is an example of querying the API for 30 latest advisory notices.
+    """  
     url = "https://api.cisco.com/security/advisories/latest/30"
     type = "cisco_latest_advisory"
     vendor = "cisco"
@@ -89,6 +97,8 @@ def cisco_latest():
     cisco_api(url,type,vendor,product)
 
 def cisco_CVE_2018_0296():
+    """This function is an example of querying the API for VE-2018-0296.
+    """  
     url = "https://api.cisco.com/security/advisories/cvrf/cve/CVE-2018-0296"
     type = "cisco_vpn_cve"
     vendor = "cisco"
