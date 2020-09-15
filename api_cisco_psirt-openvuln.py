@@ -30,7 +30,6 @@ psirt_auth_json = psirt_auth.json()
 psirt_auth_data = psirt_auth_json['access_token']
 
 # The below header includes the Cisco psirt_auth_headers token for the GET requests
-
 cisco_api_headers = {
     'Accept':'application/json',
     'Authorization': "Bearer " + psirt_auth_data,
